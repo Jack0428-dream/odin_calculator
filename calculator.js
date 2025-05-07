@@ -1,3 +1,37 @@
+const calculator = document.querySelector("#calculator");
+
+const display = document.querySelector("#display");
+const buttonbox = document.querySelector("#buttons");
+for(let i=0; i < 4; i++) {
+    const div = document.createElement("div");
+    buttonbox.appendChild(div);
+    div.setAttribute("id",`div${i}`);
+}
+const div1 = document.querySelector("#div0");
+const div2 = document.querySelector("#div1");
+const div3 = document.querySelector("#div2");
+const div4 = document.querySelector("#div3");
+ 
+for(let i=0; i < 4; i++) {
+    const button = document.createElement("button");
+    div1.appendChild(button);
+};
+
+for(let i=0; i < 4; i++) {
+    const button = document.createElement("button");
+    div2.appendChild(button);
+};
+
+for(let i=0; i < 4; i++) {
+    const button = document.createElement("button");
+    div3.appendChild(button);
+};
+
+for(let i=0; i < 4; i++) {
+    const button = document.createElement("button");
+    div4.appendChild(button);
+};
+
 function add(num1, num2) {
     return num1 + num2;
 }

@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+#calculator {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-color: red;
+    justify-content: center;
+}
+
+#display {
+    height: 100px;
+    width: inherit;
+    background-color: grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: column;
+
+}
+
+button{
+    border-radius: 70%;
+    padding: 32px 32px
+}
