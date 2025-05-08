@@ -16,87 +16,81 @@ const div5 = document.querySelector("#div4");
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div1.appendChild(button);
-    const span = document.createElement("span");
-    button.appendChild(span);
-    span.setAttribute("id", `com${i}`);
+    button.setAttribute("id", `cmd${i}`);
 };
-const cmd1 = document.querySelector("#com0");
-const cmd2 = document.querySelector("#com1");
-const cmd3 = document.querySelector("#com2");
-const cmd4 = document.querySelector("#com3");
-// cmd1.textContent = "A/C";
-// cmd2.textContent = "+/-";
-// cmd3.textContent = "%";
-// cmd4.textContent = "÷";
+const cmd1 = document.querySelector("#cmd0");
+const cmd2 = document.querySelector("#cmd1");
+const cmd3 = document.querySelector("#cmd2");
+const cmd4 = document.querySelector("#cmd3");
+
+cmd1.textContent = "A/C";
+cmd2.textContent = "+/-";
+cmd3.textContent = "%";
+cmd4.textContent = "÷";
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div2.appendChild(button);
-    const span = document.createElement("span");
-    button.appendChild(span);
-    span.setAttribute("id", `num9${i}`);
+    button.setAttribute("id", `num9${i}`);
 };
 
 const num7 = document.querySelector("#num90");
 const num8 = document.querySelector("#num91");
 const num9 = document.querySelector("#num92");
-const cmdx = document.querySelector("#num93");
-// num9.textContent = "7";
-// num8.textContent = "8";
-// num7.textContent = "9";
-// cmdx.textContent = "x";
+const cmdM = document.querySelector("#num93");
+
+num7.textContent = "7";
+num8.textContent = "8";
+num9.textContent = "9";
+cmdM.textContent = "x";
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div3.appendChild(button);
-    const span = document.createElement("span");
-    button.appendChild(span);
-    span.setAttribute("id", `num6${i}`);
+    button.setAttribute("id", `num6${i}`);
 };
 
 const num4 = document.querySelector("#num60");
 const num5 = document.querySelector("#num61");
 const num6 = document.querySelector("#num62");
-const cmds = document.querySelector("#num63");
-// num4.textContent = "4";
-// num5.textContent = "5";
-// num6.textContent = "6";
-// cmds.textContent = "-";
+const cmdS = document.querySelector("#num63");
+
+num4.textContent = "4";
+num5.textContent = "5";
+num6.textContent = "6";
+cmdS.textContent = "-";
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div4.appendChild(button);
-    const span = document.createElement("span");
-    button.appendChild(span);
-    span.setAttribute("id", `num3${i}`);
+    button.setAttribute("id", `num3${i}`);
 };
 
 const num1 = document.querySelector("#num30");
 const num2 = document.querySelector("#num31");
 const num3 = document.querySelector("#num32");
-const cmda = document.querySelector("#num33");
-// num1.textContent = "1";
-// num2.textContent = "2";
-// num3.textContent = "3";
-// cmda.textContent = "+";
+const cmdA = document.querySelector("#num33");
+
+num1.textContent = "1";
+num2.textContent = "2";
+num3.textContent = "3";
+cmdA.textContent = "+";
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div5.appendChild(button);
-    const span = document.createElement("span");
-    button.appendChild(span);
-    span.setAttribute("id", `zero${i}`);
+    button.setAttribute("id", `zero${i}`);
 };
 
+const blank = document.querySelector("#zero0");
 const zero = document.querySelector("#zero1");
 const deci = document.querySelector("#zero2");
-const cmde = document.querySelector("#zero3");
-// zero.textContent = "0";
-// deci.textContent = ".";
-// cmde.textContent = "=";
+const cmdE = document.querySelector("#zero3");
 
-
-
+blank.textContent = "00";
+zero.textContent = "0";
+deci.textContent = ".";
+cmdE.textContent = "=";
 
 function add(num1, num2) {
     return num1 + num2;

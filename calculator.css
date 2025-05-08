@@ -34,7 +34,7 @@ button{
     height: 85px;
     width: 85px;
     border-radius: 70%;
-    margin: 1.5px;
+    margin: 3.5px;
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
@@ -43,7 +43,7 @@ button{
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: aqua;
+    background-color: lightgreen;
     border: none;
     box-shadow: 0 4.5px #999;
     transition-duration: 0.4s
@@ -51,20 +51,16 @@ button{
 
 button:hover {
     background-color: white; /* Green */
-    color: white;
+    color: black;
 }
 
 button:active {
     background-color: white;
-    box-shadow: 0 5px #666;
+    box-shadow: 0 5px #999;
     transform: translateY(4px);
 }
 
 #div0, #div1, #div2, #div3, #div4{
-   margin: 1.5px; 
-   padding: 1.5px;
-}
-
-span {
-
+   margin: 2.5px;
+   padding: 5px;
 }
