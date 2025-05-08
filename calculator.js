@@ -2,7 +2,7 @@ const calculator = document.querySelector("#calculator");
 
 const display = document.querySelector("#display");
 const buttonbox = document.querySelector("#buttons");
-for(let i=0; i < 4; i++) {
+for(let i=0; i <= 4; i++) {
     const div = document.createElement("div");
     buttonbox.appendChild(div);
     div.setAttribute("id",`div${i}`);
@@ -11,26 +11,50 @@ const div1 = document.querySelector("#div0");
 const div2 = document.querySelector("#div1");
 const div3 = document.querySelector("#div2");
 const div4 = document.querySelector("#div3");
+const div5 = document.querySelector("#div4");
  
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div1.appendChild(button);
+    const span = document.createElement("span");
+    button.appendChild(span);
+    span.setAttribute("id", `com${i}`);
 };
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div2.appendChild(button);
+    const span = document.createElement("span");
+    button.appendChild(span);
+    span.setAttribute("id", `num9${i}`);
 };
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div3.appendChild(button);
+    const span = document.createElement("span");
+    button.appendChild(span);
+    span.setAttribute("id", `num6${i}`);
 };
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div4.appendChild(button);
+    const span = document.createElement("span");
+    button.appendChild(span);
+    span.setAttribute("id", `num3${i}`);
 };
+
+for(let i=0; i < 4; i++) {
+    const button = document.createElement("button");
+    div5.appendChild(button);
+    const span = document.createElement("span");
+    button.appendChild(span);
+    span.setAttribute("id", `zero${i}`);
+};
+
+
+
 
 function add(num1, num2) {
     return num1 + num2;
