@@ -18,15 +18,31 @@ for(let i=0; i < 4; i++) {
     div1.appendChild(button);
     button.setAttribute("id", `cmd${i}`);
 };
-const cmd1 = document.querySelector("#cmd0");
-const cmd2 = document.querySelector("#cmd1");
-const cmd3 = document.querySelector("#cmd2");
-const cmd4 = document.querySelector("#cmd3");
+const cmdC = document.querySelector("#cmd0");
+const cmdPN = document.querySelector("#cmd1");
+const cmdP = document.querySelector("#cmd2");
+const cmdD = document.querySelector("#cmd3");
 
-cmd1.textContent = "A/C";
-cmd2.textContent = "+/-";
-cmd3.textContent = "%";
-cmd4.textContent = "÷";
+cmdC.textContent = "A/C";
+cmdPN.textContent = "+/-";
+cmdP.textContent = "%";
+cmdD.textContent = "÷";
+
+cmdC.addEventListener("click", () => {
+    display.textContent = "";
+});
+
+// cmdPN.addEventListener("Click", () => {
+//     display.textContent = "";
+// });
+
+// cmdP.addEventListener("Click", () => {
+//     display.textContent = "";
+// });
+
+// cmdD.addEventListener("Click", () => {
+//     display.textContent = "";
+// });
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
@@ -44,6 +60,22 @@ num8.textContent = "8";
 num9.textContent = "9";
 cmdM.textContent = "x";
 
+num7.addEventListener("click", () => {
+    display.textContent = "7";
+});
+
+num8.addEventListener("click", () => {
+    display.textContent = "8";
+});
+
+num9.addEventListener("click", () => {
+    display.textContent = "9";
+});
+
+cmdM.addEventListener("click", () => {
+    display.textContent = "x";
+});
+
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div3.appendChild(button);
@@ -59,6 +91,22 @@ num4.textContent = "4";
 num5.textContent = "5";
 num6.textContent = "6";
 cmdS.textContent = "-";
+
+num4.addEventListener("click", () => {
+    display.textContent = "4";
+});
+
+num5.addEventListener("click", () => {
+    display.textContent = "5";
+});
+
+num6.addEventListener("click", () => {
+    display.textContent = "6";
+});
+
+cmdS.addEventListener("click", () => {
+    display.textContent = "-";
+});
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
@@ -76,21 +124,53 @@ num2.textContent = "2";
 num3.textContent = "3";
 cmdA.textContent = "+";
 
+num1.addEventListener("click", () => {
+    display.textContent = "1";
+});
+
+num2.addEventListener("click", () => {
+    display.textContent = "2";
+});
+
+num3.addEventListener("click", () => {
+    display.textContent = "3";
+});
+
+cmdA.addEventListener("click", () => {
+    display.textContent = "+";
+});
+
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
     div5.appendChild(button);
     button.setAttribute("id", `zero${i}`);
 };
 
-const blank = document.querySelector("#zero0");
+const dbZero = document.querySelector("#zero0");
 const zero = document.querySelector("#zero1");
 const deci = document.querySelector("#zero2");
 const cmdE = document.querySelector("#zero3");
 
-blank.textContent = "00";
+dbZero.textContent = "00";
 zero.textContent = "0";
 deci.textContent = ".";
 cmdE.textContent = "=";
+
+dbZero.addEventListener("click", () => {
+    display.textContent = "00";
+});
+
+zero.addEventListener("click", () => {
+    display.textContent = "0";
+});
+
+deci.addEventListener("click", () => {
+    display.textContent = ".";
+});
+
+cmdE.addEventListener("click", () => {
+    display.textContent = "=";
+});
 
 function add(num1, num2) {
     return num1 + num2;
