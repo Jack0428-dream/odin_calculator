@@ -2,6 +2,12 @@ const calculator = document.querySelector("#calculator");
 
 const display = document.querySelector("#display");
 const buttonbox = document.querySelector("#buttons");
+const textbox = document.querySelector("#textbox");
+
+let test1 = 0;
+// let test2 = parseInt()
+
+console.log(textbox);
 for(let i=0; i <= 4; i++) {
     const div = document.createElement("div");
     buttonbox.appendChild(div);
@@ -29,18 +35,18 @@ cmdP.textContent = "%";
 cmdD.textContent = "÷";
 
 cmdC.addEventListener("click", () => {
-    display.textContent = "";
+    textbox.textContent = "";
 });
 
-// cmdPN.addEventListener("Click", () => {
+// cmdPN.addEventListener("click", () => {
+    
+// });
+
+// cmdP.addEventListener("click", () => {
 //     display.textContent = "";
 // });
 
-// cmdP.addEventListener("Click", () => {
-//     display.textContent = "";
-// });
-
-// cmdD.addEventListener("Click", () => {
+// cmdD.addEventListener("click", () => {
 //     display.textContent = "";
 // });
 
@@ -58,22 +64,22 @@ const cmdM = document.querySelector("#num93");
 num7.textContent = "7";
 num8.textContent = "8";
 num9.textContent = "9";
-cmdM.textContent = "x";
+cmdM.textContent = "×";
 
 num7.addEventListener("click", () => {
-    display.textContent = "7";
+    test1 = textbox.textContent += "7";
 });
 
 num8.addEventListener("click", () => {
-    display.textContent = "8";
+    test1 = textbox.textContent += "8";
 });
 
 num9.addEventListener("click", () => {
-    display.textContent = "9";
+    textbox.textContent += "9";
 });
 
 cmdM.addEventListener("click", () => {
-    display.textContent = "x";
+    textbox.textContent += "×";
 });
 
 for(let i=0; i < 4; i++) {
@@ -93,19 +99,19 @@ num6.textContent = "6";
 cmdS.textContent = "-";
 
 num4.addEventListener("click", () => {
-    display.textContent = "4";
+    textbox.textContent += "4";
 });
 
 num5.addEventListener("click", () => {
-    display.textContent = "5";
+    textbox.textContent += "5";
 });
 
 num6.addEventListener("click", () => {
-    display.textContent = "6";
+    textbox.textContent += "6";
 });
 
 cmdS.addEventListener("click", () => {
-    display.textContent = "-";
+    textbox.textContent += "-";
 });
 
 for(let i=0; i < 4; i++) {
@@ -125,19 +131,19 @@ num3.textContent = "3";
 cmdA.textContent = "+";
 
 num1.addEventListener("click", () => {
-    display.textContent = "1";
+    textbox.textContent += "1";
 });
 
 num2.addEventListener("click", () => {
-    display.textContent = "2";
+    textbox.textContent += "2";
 });
 
 num3.addEventListener("click", () => {
-    display.textContent = "3";
+    textbox.textContent += "3";
 });
 
 cmdA.addEventListener("click", () => {
-    display.textContent = "+";
+    textbox.textContent += "+";
 });
 
 for(let i=0; i < 4; i++) {
@@ -157,20 +163,23 @@ deci.textContent = ".";
 cmdE.textContent = "=";
 
 dbZero.addEventListener("click", () => {
-    display.textContent = "00";
+    textbox.textContent += "00";
 });
 
 zero.addEventListener("click", () => {
-    display.textContent = "0";
+    textbox.textContent += "0";
 });
 
 deci.addEventListener("click", () => {
-    display.textContent = ".";
+    textbox.textContent += ".";
 });
 
-cmdE.addEventListener("click", () => {
-    display.textContent = "=";
-});
+
+
+
+// cmdE.addEventListener("click", () => {
+
+// });
 
 function add(num1, num2) {
     return num1 + num2;
