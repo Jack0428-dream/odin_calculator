@@ -21,4 +21,13 @@ so for that I'm thinking of using if statement to check the display has the numb
 
 3) change the plans I'll make the function that it calls the operate function while store the numbers into two varaibles then i'll call that function when user hits the operators
 
+5/11 
+
+2. A calculator operation will consist of a number, an operator, and another number. => use three variables one for each part of the operation => use these update my display later
+so for this calculator we need 3 variables
+
+3. create a new function (I made it which has three variables)
+   named function operate
+
+4. I made a basic HTML calculator with buttons for each digit and operator (including =)
 

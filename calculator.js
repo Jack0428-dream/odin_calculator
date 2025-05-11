@@ -5,8 +5,9 @@ const buttonbox = document.querySelector("#buttons");
 const textbox = document.querySelector("#textbox");
 
 const operators = ["+", "-", "×", "÷" ];
-let test1 = 0;
+let number1 = 0;
 let number2 = 0;
+let operator = "";
 
 for(let i=0; i <= 4; i++) {
     const div = document.createElement("div");
@@ -43,12 +44,13 @@ cmdPN.addEventListener("click", () => {
 });
 
 cmdP.addEventListener("click", () => {
-    display.textContent = "";
+    textbox.textContent = "";
 });
 
 cmdD.addEventListener("click", () => {
-    display.textContent = "÷";
-    operators[3];
+    number1 = parseFloat(textbox.textContent);
+    textbox.textContent = "";
+    operator = operators[3];
 });
 
 for(let i=0; i < 4; i++) {
@@ -69,22 +71,20 @@ cmdM.textContent = "×";
 
 num7.addEventListener("click", () => {
     textbox.textContent += "7";
-    test1 = parseInt(textbox.textContent);
 });
 
 num8.addEventListener("click", () => {
     textbox.textContent += "8";
-    test1 = parseInt(textbox.textContent);
 });
 
 num9.addEventListener("click", () => {
     textbox.textContent += "9";
-    test1 = parseInt(textbox.textContent);
 });
 
 cmdM.addEventListener("click", () => {
-    textbox.textContent += "×";
-    operators[2];
+    number1 = parseFloat(textbox.textContent);
+    textbox.textContent = "";
+    operator = operators[2];
 });
 
 for(let i=0; i < 4; i++) {
@@ -105,23 +105,22 @@ cmdS.textContent = "-";
 
 num4.addEventListener("click", () => {
     textbox.textContent += "4";
-    test1 = parseInt(textbox.textContent);
 });
 
 num5.addEventListener("click", () => {
     textbox.textContent += "5";
-    test1 = parseInt(textbox.textContent);
 });
 
 num6.addEventListener("click", () => {
     textbox.textContent += "6";
-    test1 = parseInt(textbox.textContent);
 });
 
 cmdS.addEventListener("click", () => {
-    textbox.textContent += "-";
-    operators[1];
+    number1 = parseFloat(textbox.textContent);
+    textbox.textContent = "";
+    operator = operators[1];
 });
+
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
@@ -141,22 +140,20 @@ cmdA.textContent = "+";
 
 num1.addEventListener("click", () => {
     textbox.textContent += "1";
-    test1 = parseInt(textbox.textContent);
 });
 
 num2.addEventListener("click", () => {
     textbox.textContent += "2";
-    test1 = parseInt(textbox.textContent);
 });
 
 num3.addEventListener("click", () => {
     textbox.textContent += "3";
-    test1 = parseInt(textbox.textContent);
 });
 
 cmdA.addEventListener("click", () => {
-    textbox.textContent += "+";
-    operators[0];
+    number1 = parseFloat(textbox.textContent);
+    textbox.textContent = "";
+    operator = operators[0];
 });
 
 for(let i=0; i < 4; i++) {
@@ -177,24 +174,20 @@ cmdE.textContent = "=";
 
 dbZero.addEventListener("click", () => {
     textbox.textContent += "00";
-    test1 = parseInt(textbox.textContent);
 });
 
 zero.addEventListener("click", () => {
     textbox.textContent += "0";
-    test1 = parseInt(textbox.textContent);
 });
 
 deci.addEventListener("click", () => {
     textbox.textContent += ".";
 });
 
-
-
-
-// cmdE.addEventListener("click", () => {
-
-// });
+cmdE.addEventListener("click", () => {
+    number2 = parseFloat(textbox.textContent);
+    textbox.textContent = operate(number1, operator, number2);
+});
 
 function add(num1, num2) {
     return num1 + num2;
