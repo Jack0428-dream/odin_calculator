@@ -4,10 +4,34 @@ const display = document.querySelector("#display");
 const buttonbox = document.querySelector("#buttons");
 const textbox = document.querySelector("#textbox");
 
-const operators = ["+", "-", "×", "÷" ];
+const operators = ["+", "-", "×", "÷", "="];
 let number1 = 0;
 let number2 = 0;
 let operator = "";
+let resetInput = false;
+
+function handleOfOp(operation){
+    let str = textbox.textContent;
+    if(operator != "") {
+        if(str.includes("%")) {
+            number2 = parseFloat(str.replace("%",""))/100;
+        } else {
+            number2 = parseFloat(str);
+        };
+        let result = operate(number1,operator,number2).toFixed(2);
+        textbox.textContent = result;
+        number1 = parseFloat(textbox.textContent);
+        operator = operation;
+    } else if(operator === "") {
+        if(str.includes("%")) {
+            number1 = parseFloat(str.replace("%",""))/100;
+        } else {
+            number1 = parseFloat(str);
+        };
+        operator = operation;
+    }; 
+    resetInput = true;
+}; 
 
 for(let i=0; i <= 4; i++) {
     const div = document.createElement("div");
@@ -37,6 +61,9 @@ cmdD.textContent = "÷";
 
 cmdC.addEventListener("click", () => {
     textbox.textContent = "";
+    number1 = 0;
+    number2 = 0;
+    operator = "";
 });
 
 cmdPN.addEventListener("click", () => {
@@ -56,17 +83,7 @@ cmdP.addEventListener("click", () => {
     textbox.textContent = `${ratio}`;
 });
 
-cmdD.addEventListener("click", () => {
-    let str = textbox.textContent;
-    if (str.includes("%")) {
-        let perNum = parseFloat(str.replace("%",""));
-        number1 = perNum / 100;
-    } else if (!str.includes("%")) {
-        number1 = parseFloat(textbox.textContent);
-    };
-    textbox.textContent = "";
-    operator = operators[3];
-});
+cmdD.addEventListener("click", () => handleOfOp(operators[3]));
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
@@ -85,28 +102,33 @@ num9.textContent = "9";
 cmdM.textContent = "×";
 
 num7.addEventListener("click", () => {
-    textbox.textContent += "7";
+    if(resetInput) {
+        textbox.textContent = "7";
+        resetInput = false;
+    } else {
+        textbox.textContent += "7";
+    };
 });
 
 num8.addEventListener("click", () => {
-    textbox.textContent += "8";
+    if(resetInput) {
+        textbox.textContent = "8";
+        resetInput = false;
+    } else {
+        textbox.textContent += "8";
+    };
 });
 
 num9.addEventListener("click", () => {
-    textbox.textContent += "9";
+    if(resetInput) {
+        textbox.textContent = "9";
+        resetInput = false;
+    } else {
+        textbox.textContent += "9";
+    };
 });
 
-cmdM.addEventListener("click", () => {
-    let str = textbox.textContent;
-    if (str.includes("%")) {
-        let perNum = parseFloat(str.replace("%",""));
-        number1 = perNum / 100;
-    } else if (!str.includes("%")) {
-        number1 = parseFloat(textbox.textContent);
-    };
-    textbox.textContent = "";
-    operator = operators[2];
-});
+cmdM.addEventListener("click", () => handleOfOp(operators[2]));
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
@@ -125,28 +147,33 @@ num6.textContent = "6";
 cmdS.textContent = "-";
 
 num4.addEventListener("click", () => {
-    textbox.textContent += "4";
+    if(resetInput) {
+        textbox.textContent = "4";
+        resetInput = false;
+    } else {
+        textbox.textContent += "4";
+    };
 });
 
 num5.addEventListener("click", () => {
-    textbox.textContent += "5";
+    if(resetInput) {
+        textbox.textContent = "5";
+        resetInput = false;
+    } else {
+        textbox.textContent += "5";
+    };
 });
 
 num6.addEventListener("click", () => {
-    textbox.textContent += "6";
+    if(resetInput) {
+        textbox.textContent = "6";
+        resetInput = false;
+    } else {
+        textbox.textContent += "6";
+    };
 });
 
-cmdS.addEventListener("click", () => {
-    let str = textbox.textContent;
-    if (str.includes("%")) {
-        let perNum = parseFloat(str.replace("%",""));
-        number1 = perNum / 100;
-    } else if (!str.includes("%")) {
-        number1 = parseFloat(textbox.textContent);
-    };
-    textbox.textContent = "";
-    operator = operators[1];
-});
+cmdS.addEventListener("click", () => handleOfOp(operators[1]));
 
 
 for(let i=0; i < 4; i++) {
@@ -166,28 +193,33 @@ num3.textContent = "3";
 cmdA.textContent = "+";
 
 num1.addEventListener("click", () => {
-    textbox.textContent += "1";
+    if(resetInput) {
+        textbox.textContent = "1";
+        resetInput = false;
+    } else {
+        textbox.textContent += "1";
+    };
 });
 
 num2.addEventListener("click", () => {
-    textbox.textContent += "2";
+    if(resetInput) {
+        textbox.textContent = "2";
+        resetInput = false;
+    } else {
+        textbox.textContent += "2";
+    };
 });
 
 num3.addEventListener("click", () => {
-    textbox.textContent += "3";
+    if(resetInput) {
+        textbox.textContent = "3";
+        resetInput = false;
+    } else {
+        textbox.textContent += "3";
+    };
 });
 
-cmdA.addEventListener("click", () => {
-    let str = textbox.textContent;
-    if (str.includes("%")) {
-        let perNum = parseFloat(str.replace("%",""));
-        number1 = perNum / 100;
-    } else if (!str.includes("%")) {
-        number1 = parseFloat(textbox.textContent);
-    };
-    textbox.textContent = "";
-    operator = operators[0];
-});
+cmdA.addEventListener("click", () => handleOfOp(operators[0]));
 
 for(let i=0; i < 4; i++) {
     const button = document.createElement("button");
@@ -206,15 +238,30 @@ deci.textContent = ".";
 cmdE.textContent = "=";
 
 dbZero.addEventListener("click", () => {
-    textbox.textContent += "00";
+    if(resetInput) {
+        textbox.textContent = "00";
+        resetInput = false;
+    } else {
+        textbox.textContent += "00";
+    };
 });
 
 zero.addEventListener("click", () => {
-    textbox.textContent += "0";
+    if(resetInput) {
+        textbox.textContent = "0";
+        resetInput = false;
+    } else {
+        textbox.textContent += "0";
+    };
 });
 
 deci.addEventListener("click", () => {
-    textbox.textContent += ".";
+    if(resetInput) {
+        textbox.textContent = ".";
+        resetInput = false;
+    } else {
+        textbox.textContent += ".";
+    };
 });
 
 cmdE.addEventListener("click", () => {
@@ -225,8 +272,11 @@ cmdE.addEventListener("click", () => {
     } else if (!str.includes("%")) {
         number2 = parseFloat(textbox.textContent);
     };
-    
-    textbox.textContent = operate(number1, operator, number2).toFixed(2);
+
+    let result = operate(number1,operator,number2).toFixed(2);
+    textbox.textContent = result;
+    number1 = result;
+    operator = "";
 });
 
 function add(num1, num2) {
@@ -245,10 +295,6 @@ function divide(num1,num2) {
     return num1/num2;
 }
 
-// console.log(add(4,5));
-// console.log(subtract(4,5));
-// console.log(multiply(4,5));
-// console.log(divide(4,5));
 
 function operate(numFir, choice, numSec) {
     let result = 0;

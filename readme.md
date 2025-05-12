@@ -31,3 +31,7 @@ so for this calculator we need 3 variables
 
 4. I made a basic HTML calculator with buttons for each digit and operator (including =)
 
+5/12
+1. Almost finish with the calculator
+2. New Prob - it's not working as regular calculator does when you press 2 + 2 - 4 it should show the 2 + 2 's result first which is not happening right now
+3. sec the problem with operator so right now my code only verify whether user use the different operator. which means when user use same operator it doesn't work as it supposed to work. 
