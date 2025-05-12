@@ -52,12 +52,18 @@ cmdPN.addEventListener("click", () => {
 
 cmdP.addEventListener("click", () => {
     let ratio = textbox.textContent;
-    ratio = `(${ratio}%)`;
+    ratio = `${ratio}%`;
     textbox.textContent = `${ratio}`;
 });
 
 cmdD.addEventListener("click", () => {
-    number1 = parseFloat(textbox.textContent);
+    let str = textbox.textContent;
+    if (str.includes("%")) {
+        let perNum = parseFloat(str.replace("%",""));
+        number1 = perNum / 100;
+    } else if (!str.includes("%")) {
+        number1 = parseFloat(textbox.textContent);
+    };
     textbox.textContent = "";
     operator = operators[3];
 });
@@ -91,7 +97,13 @@ num9.addEventListener("click", () => {
 });
 
 cmdM.addEventListener("click", () => {
-    number1 = parseFloat(textbox.textContent);
+    let str = textbox.textContent;
+    if (str.includes("%")) {
+        let perNum = parseFloat(str.replace("%",""));
+        number1 = perNum / 100;
+    } else if (!str.includes("%")) {
+        number1 = parseFloat(textbox.textContent);
+    };
     textbox.textContent = "";
     operator = operators[2];
 });
@@ -125,7 +137,13 @@ num6.addEventListener("click", () => {
 });
 
 cmdS.addEventListener("click", () => {
-    number1 = parseFloat(textbox.textContent);
+    let str = textbox.textContent;
+    if (str.includes("%")) {
+        let perNum = parseFloat(str.replace("%",""));
+        number1 = perNum / 100;
+    } else if (!str.includes("%")) {
+        number1 = parseFloat(textbox.textContent);
+    };
     textbox.textContent = "";
     operator = operators[1];
 });
@@ -160,7 +178,13 @@ num3.addEventListener("click", () => {
 });
 
 cmdA.addEventListener("click", () => {
-    number1 = parseFloat(textbox.textContent);
+    let str = textbox.textContent;
+    if (str.includes("%")) {
+        let perNum = parseFloat(str.replace("%",""));
+        number1 = perNum / 100;
+    } else if (!str.includes("%")) {
+        number1 = parseFloat(textbox.textContent);
+    };
     textbox.textContent = "";
     operator = operators[0];
 });
@@ -194,8 +218,15 @@ deci.addEventListener("click", () => {
 });
 
 cmdE.addEventListener("click", () => {
-    number2 = parseFloat(textbox.textContent);
-    textbox.textContent = operate(number1, operator, number2);
+    let str = textbox.textContent;
+    if (str.includes("%")) {
+        let perNum = parseFloat(str.replace("%",""));
+        number2 = perNum / 100;
+    } else if (!str.includes("%")) {
+        number2 = parseFloat(textbox.textContent);
+    };
+    
+    textbox.textContent = operate(number1, operator, number2).toFixed(2);
 });
 
 function add(num1, num2) {
