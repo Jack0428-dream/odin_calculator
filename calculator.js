@@ -40,11 +40,20 @@ cmdC.addEventListener("click", () => {
 });
 
 cmdPN.addEventListener("click", () => {
-    textbox.textContent = "";
+    let conNum = parseFloat(textbox.textContent);
+    if(conNum > 0) {
+       conNum = -conNum;
+       textbox.textContent =`${conNum}`;
+    }else if (conNum < 0) {
+       conNum = -conNum;
+       textbox.textContent =`${conNum}`;
+    };
 });
 
 cmdP.addEventListener("click", () => {
-    textbox.textContent = "";
+    let ratio = textbox.textContent;
+    ratio = `(${ratio}%)`;
+    textbox.textContent = `${ratio}`;
 });
 
 cmdD.addEventListener("click", () => {
